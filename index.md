@@ -35,10 +35,12 @@ July &ndash; November, 2016.
 ## Hackathons
 ### "AI & BigData in medicine, education and neurocommunications" hackathon by [Skoltech](https://www.skoltech.ru/en) and [Philips](https://www.philips.com/global)
 5.04.2019 &ndash; 7.04.2019
+
 Victory while solving a problem of classifying types of epilepsy attacks.
 
 ### Third "IT-hackathon on the financial services development" by [AkBars Digital](https://akbars.digital)
 29.03.2019 &ndash; 30.03.2019
+
 Second place with project "Client passport photo verification" via [facerecognition](https://github.com/ageitgey/face_recognition).
 
 ## Education
