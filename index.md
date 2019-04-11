@@ -1,37 +1,57 @@
-## Welcome to GitHub Pages
+# Constantine Yarushkin &mdash; Python developer
+:email: [ceeveeya@gmail.com](mailto:ceeveeya@gmail.com)
 
-You can use the [editor on GitHub](https://github.com/cos-of-me/resume/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+## Work experience
+### Python developer, [AkBars Digital](https://akbars.digital/)
+January, 2019 &ndash; present.
+- Developed orchestration server for robotic process automation on Django with Gunicorn + Nginx in Docker;
+- Developed program robots using pyautogui, lackey, win32api and various data processing libraries;
+- Worked in a team with Scrum flow.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Web developer, [Innova Group](http://innovacompanies.com)
+March, 2018 &ndash; January 2019.
+- Developed Django project with DRF and Vue.js;
+- Optimized SQL queries via ORM (solving n+1 query problems, etc);
+- Worked with task queries via RabbitMQ and Celery;
+- Developed smart contracts based on Ethereum and Qtum blockchains.
 
-### Markdown
+### Web developer, [OrdoTrans](http://or.do)
+November, 2016 &ndash; March, 2018.
+- Worked on the main site’s (or.do) frontend and backend;
+- Developed applications for company’s internal needs in Python (parsing sites, data representation);
+- Deployed applications on machines with both Linux and Windows Server;
+- Java, Spring Boot, MS SQL, Python 3, Materialize CSS.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Python Developer, [Meanotek](http://meanotek.io)
+July &ndash; November, 2016.
+- Worked on parsing and formatting different datasets;
+- Integrated multiple components via API;
+- Used relational and graph databases;
+- Developed small web applications including backend;
+- Deployed applications on Linux machines;
+- Managed projects in a small team of 3 developers;
+- Python 2(3) including third-party libraries, Tornado, MySQL, Neo4j, HTML/CSS, Bootstrap, Git, Linux.
 
-```markdown
-Syntax highlighted code block
+## Hackathons
+### "AI & BigData in medicine, education and neurocommunications" hackathon by [Skoltech](https://www.skoltech.ru/en) and [Philips](https://www.philips.com/global)
+5.04.2019 &ndash; 7.04.2019
+Victory while solving a problem of classifying types of epilepsy attacks.
 
-# Header 1
-## Header 2
-### Header 3
+### Third "IT-hackathon on the financial services development" by [AkBars Digital Technologies](https://akbars.digital)
+29.03.2019 &ndash; 30.03.2019
+Second place with project "Client passport photo verification" via [facerecognition](https://github.com/ageitgey/face_recognition).
 
-- Bulleted
-- List
+## Education
+Kazan State Technical University, 2008 - 2013, Masters degree in Technology of mechanical engineering and organization of production.
 
-1. Numbered
-2. List
+## Self study
+Python programming courses on [Coursera](https://coursera.org), dived into algorithms on [KhanAcademy](https://www.khanacademy.org) and learned other stuff around the internet (databases, deployment, html/css/js, etc.).
 
-**Bold** and _Italic_ and `Code` text
+## Languages
+Russian (native), English (pre-advanced, reading tech/non-tech literature, watching movies/TV, didn’t have much of a practice in speaking).
 
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/cos-of-me/resume/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+## Interests
+- Yoga
+- Kendo
+- Reading fiction/non-fiction
+- Translating articles on [medium](https://medium.com/@yrcnv) (en -> ru).
