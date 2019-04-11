@@ -37,7 +37,7 @@ July &ndash; November, 2016.
 5.04.2019 &ndash; 7.04.2019
 Victory while solving a problem of classifying types of epilepsy attacks.
 
-### Third "IT-hackathon on the financial services development" by [AkBars Digital Technologies](https://akbars.digital)
+### Third "IT-hackathon on the financial services development" by [AkBars Digital](https://akbars.digital)
 29.03.2019 &ndash; 30.03.2019
 Second place with project "Client passport photo verification" via [facerecognition](https://github.com/ageitgey/face_recognition).
 
@@ -48,7 +48,8 @@ Kazan State Technical University, 2008 - 2013, Masters degree in Technology of m
 Python programming courses on [Coursera](https://coursera.org), dived into algorithms on [KhanAcademy](https://www.khanacademy.org) and learned other stuff around the internet (databases, deployment, html/css/js, etc.).
 
 ## Languages
-Russian (native), English (pre-advanced, reading tech/non-tech literature, watching movies/TV, didn’t have much of a practice in speaking).
+- Russian (native)
+- English (pre-advanced, reading tech/non-tech literature, watching movies/TV, didn’t have much of a practice in speaking).
 
 ## Interests
 - Yoga
