@@ -32,6 +32,19 @@ July &ndash; November, 2016.
 - Managed projects in a small team of 3 developers;
 - Python 2(3) including third-party libraries, Tornado, MySQL, Neo4j, HTML/CSS, Bootstrap, Git, Linux.
 
+## About me
+I love to develop on a Linux-based system, the best option would be the Arch. Just not Windows as I've seen a lot of things simply don't work there.
+
+I can apply styles, layouts and JS, worked with Vue.JS but it gets me bored and annoyed very fast. So I like to exclude or at least minimize this part of development cycle.
+
+Git is what I version control my code with and only heard that there are Mercurial and SVN so no experience there. But I follow Git-flow with branching and squashing when needed. As of development methodologies I can say that Scrum is not a panacea. It works for some teams but sometimes it's better off without it.
+
+I think it's great to have a team-lead or a team of experienced developers to learn from. Or at least have quarterly/semiannual tech-reviews where I can identify my weak spots. Situations when all my growth as a developer is fixed solely on me are out of my interest.
+
+I'd like to work remotely and consider myself organized enough. Yet I have no problems to be on time. But I just do not believe a person can work for 8 hours straight. In other words I'm aiming for the result not for sitting sacred hours. Also I'm against heavy bureaucracy, because it just kills all aspiration.
+
+Lastly, I have a strong boundaries between work and personal life and I'm not ready to give all my time to the former, even if it compensates me three times as high.
+
 ## Hackathons
 ### "AI & BigData in medicine, education and neurocommunications" hackathon by [Skoltech](https://www.skoltech.ru/en) and [Philips](https://www.philips.com/global)
 5.04.2019 &ndash; 7.04.2019
