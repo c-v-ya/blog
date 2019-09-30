@@ -1,3 +1,9 @@
+---
+layout: page
+title: Resume
+permalink: /resume/
+---
+
 # Constantine Yarushkin &mdash; Python developer
 :email: [ceeveeya@gmail.com](mailto:ceeveeya@gmail.com)
 
