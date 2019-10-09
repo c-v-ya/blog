@@ -2,7 +2,6 @@
 layout: post
 title:  "Avoid multiple ElIf situation"
 date:   2019-10-09 08:33:25 +0000
-categories: jekyll update
 ---
 
 ## Reducing code smelling with a help from first class citizens
