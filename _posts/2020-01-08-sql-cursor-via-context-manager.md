@@ -63,8 +63,8 @@ class Cursor:
     def __exit__(...)
 ```
 
-Done. Usage is a simple `with Cursor() as cursor:`.
- 
+Done. Usage is a simple `with Cursor() as cursor:`
+
 I've never bothered to simplify it via `@contextmanager` decorator because this implementation work perfectly fine for me. And I'm not sure if we can apply that decorator to a class.
 
 I'd like to use ORM because it makes things so much easier and faster. But sometimes ORM is an overkill and you need to interact with DB manually.
