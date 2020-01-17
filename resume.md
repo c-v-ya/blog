@@ -76,4 +76,4 @@ Python programming courses on [Coursera](https://coursera.org), dived into algor
 - Yoga
 - Kendo
 - Reading fiction/non-fiction
-- Translating articles on [medium](https://medium.com/@yrcnv) (en -> ru).
+- Translating articles on [medium](https://medium.com/@c.v.ya) (en -> ru).
