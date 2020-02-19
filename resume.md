@@ -8,8 +8,13 @@ permalink: /resume/
 :email: [ceeveeya@gmail.com](mailto:ceeveeya@gmail.com)
 
 ## Work experience
+### Python developer, [SimbirSoft](https://www.simbirsoft.com/)
+November, 2019 &ndash; Present.
+- Developed back-end with containerization via Docker(Compose) according to clients ToR;
+- Worked in distributed teams by Agile with tech stack from Flask and Django to ElasticSearch and Apache Kafka.
+
 ### Python developer, [AkBars Digital](https://akbars.digital/)
-January, 2019 &ndash; present.
+January, 2019 &ndash; November, 2019.
 - Developed orchestration server for robotic process automation on Django with Gunicorn + Nginx in Docker;
 - Developed program robots using pyautogui, lackey, win32api and various data processing libraries;
 - Worked in a team with Scrum flow.
@@ -47,7 +52,7 @@ Git is what I version control my code with and only heard that there are Mercuri
 
 I think it's great to have a team-lead or a team of experienced developers to learn from. Or at least have quarterly/semiannual tech-reviews where I can identify my weak spots. Situations when all my growth as a developer is fixed solely on me are out of my interest.
 
-I'd like to work remotely and consider myself organized enough. Yet I have no problems to be on time. But I just do not believe a person can work for 8 hours straight. In other words I'm aiming for the result not for sitting sacred hours. Also I'm against heavy bureaucracy, because it just kills all aspiration.
+I'd like to work remotely and consider myself organized enough. Yet I have no problems to be on time. I'm aiming for the result not for sitting sacred hours. Also I'm against heavy bureaucracy, because it just kills all aspiration.
 
 Lastly, I have a strong boundaries between work and personal life and I'm not ready to give all my time to the former, even if it compensates me three times as high.
 
