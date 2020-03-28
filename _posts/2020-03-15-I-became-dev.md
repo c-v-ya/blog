@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "How I Became a Developer"
-date:   2019-09-30 13:15:39 +0300
+date:   2020-03-15 13:15:39 +0300
 categories: jekyll update
 ---
 
