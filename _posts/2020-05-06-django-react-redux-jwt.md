@@ -30,10 +30,12 @@ Install Django, REST Framework and JWT handling with `pip install django djangor
 
 I like all my apps in a separate directory as well as settings. So let's make it: `mkdir djact/{apps, settings}`. And move `setting.py` in a newly created settings directory. To make `settings` a package `touch djact/settings/__init__.py` and insert following lines in there:
 
+{% raw %}
 ```python
 # djact/settings/__init__.py
 from .settings import *
 ```
+{% endraw %}
 
 Here and in every file listing first line will be a comment with a relative path to the file. Just so you know.
 
@@ -44,6 +46,7 @@ This way we won't need to override the `DJANGO_SETTINGS_MODULE` variable.
 Now create a directory for the core app `mkdir djact/apps/core` and the app itself `python manage.py createapp core djact/apps/core`. Inside this newly created directory `mkdir {templates,templatetags}`.
 Create an empty `__init__.py` and react loader templatetag `load_react.py` inside `templatetags` dir:
 
+{% raw %}
 ```python
 # djact/apps/core/templatetags/load_react.py
 from django import template
@@ -83,11 +86,13 @@ def load_files(extension: str):
 
     return files
 ```
+{% endraw %}
 
 I know there is a [django-webpack-loader](https://github.com/owais/django-webpack-loader) but I prefer a simpler approach like the above.
 
 Next create `index.html` with the following content inside `templates` dir:
 
+{% raw %}
 ```jinja
 {# djact/apps/core/templates/index.html #}
 {% load static %}
@@ -105,11 +110,13 @@ Next create `index.html` with the following content inside `templates` dir:
     </body>
 </html>
 ```
+{% endraw %}
 
 ### Authentication
 
 Next we need an app for authentication, so `mkdir djact/apps/authentication` and `python manage.py startapp authentication djact/apps/authentication`. Inside this directory edit the `models.py` file:
 
+{% raw %}
 ```python
 # djact/apps/authentication/models.py
 from django.contrib.auth.models import AbstractUser
@@ -123,9 +130,11 @@ class User(AbstractUser):
     def __str__(self):
         return f'<{self.id}> {self.username}'
 ```
+{% endraw %}
 
 Next we need a serializer for users to sign up `djact/apps/authentication/serializers.py`:
 
+{% raw %}
 ```python
 # djact/apps/authentication/serializers.py
 from rest_framework import serializers
@@ -153,9 +162,11 @@ class UserSerializer(serializers.ModelSerializer):
 
         return instance
 ```
+{% endraw %}
 
 Then the view `djact/apps/authentication/views.py`:
 
+{% raw %}
 ```python
 # djact/apps/authentication/views.py
 from rest_framework import permissions
@@ -182,11 +193,13 @@ class Protected(APIView):
 
 protected = Protected.as_view()
 ```
+{% endraw %}
 
 The `Protected` view is to check that we can access the page only after logging in.
 
 And for the urls we'll have paths to our two views and also to obtain and refresh JWT:
 
+{% raw %}
 ```python
 # djact/apps/authentication/urls.py
 from django.urls import path
@@ -218,9 +231,11 @@ urlpatterns = [
     )
 ]
 ```
+{% endraw %}
 
 Update main `urls.py` at `djact`:
 
+{% raw %}
 ```python
 # djact/urls.py
 from django.contrib import admin
@@ -231,11 +246,13 @@ urlpatterns = [
     path('api/', include('djact.apps.authentication.urls')),
 ]
 ```
+{% endraw %}
 
 ### Settings
 
 I love the new `Pathlib` module so lets rewrite everything using this instead of `os`. I'm using `django-environ` to handle environment variables so let's install that `pip install django-environ && pip freeze > requirements.txt`. Copy `DJANGO_SECRET_KEY` from existing config so you won't need to generate a new one (although it's easy). We'll put that in a `.env` file.
 
+{% raw %}
 ```python
 # djact/settings/settings.py
 import pathlib
@@ -445,9 +462,11 @@ if DEBUG:
     except ModuleNotFoundError:
         print('Dev config not found')
 ```
+{% endraw %}
 
 We can override some settings or add something related only to dev environment in `djact/settings/dev.py` that's why we need last 5 lines. My `dev.py` is looking like this:
 
+{% raw %}
 ```python
 # djact/settings/dev.py
 from .settings import LOGGING, INSTALLED_APPS, MIDDLEWARE
@@ -459,11 +478,13 @@ CORS_ORIGIN_ALLOW_ALL = True
 MIDDLEWARE.insert(2, 'corsheaders.middleware.CorsMiddleware')
 
 ```
+{% endraw %}
 
 Here we tell Django to allow interacting with our react dev server, which will be running on different port and therefore considered as cross origin.
 
 Our .env.example file is looking like this:
 
+{% raw %}
 ```
 <!-- .env.example -->
 PYTHONDONTWRITEBYTECODE=1
@@ -472,11 +493,13 @@ DJANGO_SECRET_KEY=random long string
 DJANGO_DEBUG=True for dev environment|False or omit completely for production
 DJANGO_ALLOWED_HOSTS=localhost,127.0.0.1:8000,0.0.0.0:8000
 ```
+{% endraw %}
 
 So, create a `.env` file with those variables.
 
 Now create `urls.py` inside `djact/apps/core/` directory containing:
 
+{% raw %}
 ```python
 # djact/apps/core/urls.py
 from django.urls import re_path
@@ -487,9 +510,11 @@ urlpatterns = [
     re_path(r'^.*$', TemplateView.as_view(template_name='index.html'), name='index'),
 ]
 ```
+{% endraw %}
 
 And update main urls file:
 
+{% raw %}
 ```python
 # djact/urls.py
 from django.contrib import admin
@@ -501,11 +526,13 @@ urlpatterns = [
     path('', include('djact.apps.core.urls')),
 ]
 ```
+{% endraw %}
 
 Then run `python manage.py makemigrations` and `python manage.py migrate`.
 
 Our directory structure should look like this:
 
+{% raw %}
 ```
 .
 ├── djact
@@ -546,6 +573,7 @@ Our directory structure should look like this:
 ├── manage.py
 └── requirements.txt
 ```
+{% endraw %}
 
 # Creating React application
 
@@ -553,6 +581,7 @@ Let's `mkdir` for our React frontend and dive into it - `mkdir frontend && cd fr
 
 First initialize the frontend project with `yarn init` and answer the questions. Here is my example:
 
+{% raw %}
 ```
 $ yarn init
 yarn init v1.22.4
@@ -567,6 +596,7 @@ question private:
 success Saved package.json
 Done in 34.53s.
 ```
+{% endraw %}
 
 Now we can add dependencies with `yarn add react react-dom axios react-redux redux redux-thunk reselect webpack webpack-cli babel-loader @babel/core @babel/node @babel/preset-env @babel/preset-react`. And our dev dependencies with `yarn add -D eslint babel-eslint babel-polyfill eslint-plugin-import eslint-plugin-react eslint-plugin-react-hooks eslint-loader style-loader css-loader postcss-loader webpack-dev-server mini-css-extract-plugin cssnano html-webpack-plugin npm-run-all rimraf redux-immutable-state-invariant`.
 
@@ -574,6 +604,7 @@ Now we can add dependencies with `yarn add react react-dom axios react-redux red
 
 Create `.eslintrc.js` in current directory with following content:
 
+{% raw %}
 ```js
 // frontend/.eslintrc.js
 module.exports = {
@@ -612,18 +643,22 @@ module.exports = {
   },
 };
 ```
+{% endraw %}
 
 Babel config is stored in `babel.config.js`:
 
+{% raw %}
 ```js
 // frontend/babel.config.js
 module.exports = {
   presets: ["@babel/preset-env", "@babel/preset-react"],
 };
 ```
+{% endraw %}
 
 Webpack config for dev environment stored in `webpack.config.dev.js`:
 
+{% raw %}
 ```js
 // frontend/webpack.config.dev.js
 const webpack = require("webpack");
@@ -687,9 +722,11 @@ module.exports = {
   },
 };
 ```
+{% endraw %}
 
 And edit `package.json` `scripts` section to make it look like this:
 
+{% raw %}
 ```json
 // frontend/package.json
 {
@@ -714,9 +751,11 @@ And edit `package.json` `scripts` section to make it look like this:
   }
 }
 ```
+{% endraw %}
 
 Now let's add a directory for the frontend sources: `mkdir -p src/components`. Also create entry point for React - `touch src/index.js`, with the following content:
 
+{% raw %}
 ```js
 // frontend/src/index.js
 import React from "react";
@@ -731,9 +770,11 @@ render(
   document.getElementById("app")
 );
 ```
+{% endraw %}
 
 Create `html` template - `touch src/index.html`:
 
+{% raw %}
 ```html
 <!-- frontend/src/index.html -->
 <!DOCTYPE html>
@@ -748,11 +789,13 @@ Create `html` template - `touch src/index.html`:
   </body>
 </html>
 ```
+{% endraw %}
 
 You can add a favicon inside `src` directory if you're fancy.
 
 Then create the `App` component - `touch src/components/App.js`. Make it return something simple:
 
+{% raw %}
 ```js
 // frontend/src/components/App.js
 import React from "react";
@@ -763,11 +806,13 @@ function App() {
 
 export default App;
 ```
+{% endraw %}
 
 We can now test that our app is working with `yarn start:dev`. After navigating to http://localhost:3000 we should see a "Hello from React!" greeting!
 
 And here is a production `webpack.config.prod.js`:
 
+{% raw %}
 ```js
 // frontend/webpack.config.prod.js
 const webpack = require("webpack");
@@ -860,11 +905,13 @@ module.exports = {
   },
 };
 ```
+{% endraw %}
 
 Now we can `yarn build` and see our bundled file in `static` directory. And if we start our Django app via `python manage.py runserver 0.0.0.0:8000` we would see exactly the same thing but running in production mode.
 
 Our project directory should look like this:
 
+{% raw %}
 ```
 .
 ├── djact
@@ -929,11 +976,13 @@ Our project directory should look like this:
     ├── vendor.9245c714f84f4bbf6bdc.js
     └── vendor.9245c714f84f4bbf6bdc.js.map
 ```
+{% endraw %}
 
 # API service
 
 Inside `components` directory create `axiosApi.js`:
 
+{% raw %}
 ```js
 // frontend/src/components/api/axiosApi.js
 import axios from "axios";
@@ -1012,9 +1061,11 @@ export function setNewHeaders(response) {
 
 export default axiosAPI;
 ```
+{% endraw %}
 
 And `authenticationApi.js`:
 
+{% raw %}
 ```js
 // frontend/src/components/api/authenticationApi.js
 import axiosAPI, { setNewHeaders } from "./axiosApi";
@@ -1058,11 +1109,13 @@ export const isAuthenticated = () => {
   return !!token;
 };
 ```
+{% endraw %}
 
 # Redux
 
 First create `redux` directory under `djact/frontend/src/` and put following files there:
 
+{% raw %}
 ```js
 // frontend/src/redux/configureStore.dev.js
 import { createStore, applyMiddleware, compose } from "redux";
@@ -1081,7 +1134,9 @@ export default function configureStore(initialState) {
   );
 }
 ```
+{% endraw %}
 
+{% raw %}
 ```js
 // frontend/src/redux/configureStore.prod.js
 import { createStore, applyMiddleware } from "redux";
@@ -1092,7 +1147,9 @@ export default function configureStore(initialState) {
   return createStore(rootReducer, initialState, applyMiddleware(thunk));
 }
 ```
+{% endraw %}
 
+{% raw %}
 ```js
 // frontend/src/redux/configureStore.js
 // Use CommonJS require below so we can dynamically import during build-time.
@@ -1102,15 +1159,19 @@ if (process.env.NODE_ENV === "production") {
   module.exports = require("./configureStore.dev");
 }
 ```
+{% endraw %}
 
 Store is configured, now to actions! Create `actions` directory inside `redux` with following files:
 
+{% raw %}
 ```js
 // frontend/src/redux/actions/types.js
 export const LOGIN_USER_SUCCESS = "LOGIN_USER_SUCCESS";
 export const LOGOUT_USER = "LOGOUT_USER";
 ```
+{% endraw %}
 
+{% raw %}
 ```js
 // frontend/src/redux/actions/auth.js
 import { LOGIN_USER_SUCCESS, LOGOUT_USER } from "./types";
@@ -1142,16 +1203,20 @@ export function logoutUser() {
   };
 }
 ```
+{% endraw %}
 
 And the final step for redux is reducers themself, inside `frontend/src/redux/reducers` directory.
 
+{% raw %}
 ```js
 // frontend/src/redux/reducers/initialState.js
 export default {
   accessToken: localStorage.getItem("access_token"),
 };
 ```
+{% endraw %}
 
+{% raw %}
 ```js
 // frontend/src/redux/reducers/auth.js
 import * as types from "../actions/types";
@@ -1168,7 +1233,9 @@ export default function authReducer(state = initialState.accessToken, action) {
   }
 }
 ```
+{% endraw %}
 
+{% raw %}
 ```js
 // frontend/src/redux/reducers/index.js
 import { combineReducers } from "redux";
@@ -1180,6 +1247,7 @@ const rootReducer = combineReducers({
 
 export default rootReducer;
 ```
+{% endraw %}
 
 # Components
 
@@ -1189,6 +1257,7 @@ We have our reducers ready and now we need to put them to use. So let's create `
 
 This is will be our wrapper for private routes:
 
+{% raw %}
 ```js
 // frontend/src/components/authentication/PrivateRoute.js
 import React from "react";
@@ -1218,7 +1287,9 @@ PrivateRoute.propTypes = {
 
 export default PrivateRoute;
 ```
+{% endraw %}
 
+{% raw %}
 ```js
 // frontend/src/components/authentication/LoginPage.js
 import React, { useState } from "react";
@@ -1284,9 +1355,11 @@ const mapDispatchToProps = {
 
 export default connect(null, mapDispatchToProps)(LoginPage);
 ```
+{% endraw %}
 
 And the Sign Up component will be simple because I was lazy to implement this but it should be easy enough:
 
+{% raw %}
 ```js
 // frontend/src/components/authentication/SignUpPage.js
 import React from "react";
@@ -1309,11 +1382,13 @@ const SignUpPage = () => {
 
 export default SignUpPage;
 ```
+{% endraw %}
 
 ## Common
 
 Common components will contain only Header. But in theory there could live everything.. you know.. common.
 
+{% raw %}
 ```js
 // frontend/src/components/common/Header.js
 import React from "react";
@@ -1368,11 +1443,13 @@ const mapDispatchToProps = {
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);
 ```
+{% endraw %}
 
 ## Core
 
 And the final piece is core components with application logic. Here we'll have our protected page:
 
+{% raw %}
 ```js
 // frontend/src/components/core/ProfilePage.js
 import React from "react";
@@ -1394,9 +1471,11 @@ const ProfilePage = () => {
 
 export default ProfilePage;
 ```
+{% endraw %}
 
 Last thing to do is to update our `App.js`:
 
+{% raw %}
 ```js
 // frontend/src/components/App.js
 import React from "react";
@@ -1425,10 +1504,11 @@ function App() {
 
 export default App;
 ```
-
+{% endraw %}
 
 Our final project structure should look like this:
 
+{% raw %}
 ```
 .
 ├── blogpost.md
@@ -1518,6 +1598,7 @@ Our final project structure should look like this:
     ├── vendor.0d40e04c29796a70dc89.js
     └── vendor.0d40e04c29796a70dc89.js.map
 ```
+{% endraw %}
 
 # Running
 
