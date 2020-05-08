@@ -24,7 +24,7 @@ Let's start with creating a project directory, `mkdir djact` and `cd` into it. T
 
 # Creating Django project
 
-Install Django, REST Framework and JWT handling with `pip install django djangorestframework djangorestframework-simplejwt django-cors-headers`. The last package is necessary to allow our development react server to interact with Django app. And let's save our dependencies after we install something: `pip freeze > requirements.txt`. Now start new a project `django-admin startproject djact .`. Note the `.` in the end, that's telling Django to create project in current directory.
+Install Django, REST Framework and JWT handling with `pip install django djangorestframework djangorestframework-simplejwt django-cors-headers`. The last package is necessary to allow our development react server to interact with Django app. And let's save our dependencies after we install something: `pip freeze > requirements.txt`. Now start a new project `django-admin startproject djact .`. Note the `.` in the end, that's telling Django to create project in current directory.
 
 ## Apps
 
