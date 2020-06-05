@@ -8,7 +8,7 @@
     "clean:build": "rimraf ./build && mkdir ./build",
     "prebuild": "run-p clean:build",
     "build": "webpack --config webpack.config.prod.js",
-    "predeploy": "run -p build",
+    "predeploy": "run-p build",
     "deploy": "gh-pages -d build"
   },
   "main": "index.js",
