@@ -15,7 +15,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, "./build"),
-    publicPath: "/",
+    publicPath: "/blog/",
     filename: "[name].[contenthash].js",
   },
   plugins: [
