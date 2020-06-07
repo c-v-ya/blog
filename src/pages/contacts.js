@@ -17,8 +17,7 @@ const Contacts = () => (
   <Layout>
     <Col
       xs={{ span: 24 }}
-      lg={{ span: 10, offset: 3 }}
-      xl={{ span: 10, offset: 6 }}
+      lg={{ span: 10, offset: 4 }}
       style={{ padding: "1rem" }}
     >
       <h1>Contacts</h1>

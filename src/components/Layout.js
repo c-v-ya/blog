@@ -17,7 +17,7 @@ const Layout = ({ children }) => (
       <link rel="canonical" href="https://c-v-ya.github.io/blog" />
     </Helmet>
     <Row>
-      <Col xs={{ span: 24 }} lg={{ span: 4 }} xl={{ span: 2 }}>
+      <Col xs={{ span: 24 }} lg={{ span: 4 }}>
         <Nav />
       </Col>
       {children}

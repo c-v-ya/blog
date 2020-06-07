@@ -16,8 +16,7 @@ const Template = ({ data, pageContext }) => {
     <Layout>
       <Col
         xs={{ span: 24 }}
-        lg={{ span: 12, offset: 3 }}
-        xl={{ span: 10, offset: 5 }}
+        lg={{ span: 12, offset: 4 }}
         style={{ padding: "1rem" }}
       >
         <h1>{title}</h1>
