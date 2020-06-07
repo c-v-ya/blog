@@ -25,8 +25,13 @@ const Home = ({ data }) => {
 
   return (
     <Layout>
-      <Col span={10} offset={3} style={{ padding: "1.5rem" }}>
-        <h1>Blog</h1>
+      <Col
+        xs={{ span: 24 }}
+        lg={{ span: 10, offset: 3 }}
+        xl={{ span: 10, offset: 6 }}
+        style={{ padding: "1rem" }}
+      >
+        <h1>Constantine's Blog</h1>
 
         <List
           itemLayout="vertical"

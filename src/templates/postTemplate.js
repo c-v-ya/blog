@@ -14,7 +14,12 @@ const Template = ({ data, pageContext }) => {
 
   return (
     <Layout>
-      <Col span={12} offset={3} style={{ padding: "1.5rem" }}>
+      <Col
+        xs={{ span: 24 }}
+        lg={{ span: 12, offset: 3 }}
+        xl={{ span: 10, offset: 5 }}
+        style={{ padding: "1rem" }}
+      >
         <h1>{title}</h1>
         <p style={{ textAlign: "right" }}>
           <em>{date}</em>
@@ -32,16 +37,16 @@ const Template = ({ data, pageContext }) => {
           className="ant-pagination"
           style={{ display: "flex", justifyContent: "center" }}
         >
-          {prev && (
+          {next && (
             <li className="ant-pagination-item ant-pagination-prev">
-              <Link to={prev.frontmatter.path}>
+              <Link to={next.frontmatter.path}>
                 <LeftOutlined /> Previous post
               </Link>
             </li>
           )}
-          {next && (
+          {prev && (
             <li className="ant-pagination-item ant-pagination-next">
-              <Link to={next.frontmatter.path}>
+              <Link to={prev.frontmatter.path}>
                 Next post <RightOutlined />
               </Link>
             </li>

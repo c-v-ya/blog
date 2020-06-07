@@ -15,7 +15,12 @@ import NavSocial from "../components/NavSocial";
 
 const Contacts = () => (
   <Layout>
-    <Col span={10} offset={3} style={{ padding: "1.5rem" }}>
+    <Col
+      xs={{ span: 24 }}
+      lg={{ span: 10, offset: 3 }}
+      xl={{ span: 10, offset: 6 }}
+      style={{ padding: "1rem" }}
+    >
       <h1>Contacts</h1>
       <p>
         The best way to contact me is via email{" "}

@@ -1,9 +1,12 @@
 import React from "react";
 import { useLocation } from "@reach/router";
 import { Link } from "gatsby";
-import { Menu, Affix } from "antd";
+import { Grid, Menu, Affix } from "antd";
 
 const Nav = () => {
+  const { useBreakpoint } = Grid;
+  const screens = useBreakpoint();
+
   const { pathname } = useLocation();
   const selectedKey = {
     "/blog/": "home",
@@ -13,7 +16,11 @@ const Nav = () => {
 
   return (
     <Affix offsetTop={0}>
-      <Menu defaultSelectedKeys={[selectedKey]} mode="inline">
+      <Menu
+        defaultSelectedKeys={[selectedKey]}
+        mode={!screens.lg ? "horizontal" : "inline"}
+        style={!screens.lg ? { textAlign: "center" } : { minHeight: "100vh" }}
+      >
         <Menu.Item key="home">
           <Link to="/">Blog</Link>
         </Menu.Item>
