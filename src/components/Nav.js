@@ -9,10 +9,10 @@ const Nav = () => {
 
   const { pathname } = useLocation();
   const selectedKey = {
-    "/blog/": "home",
-    "/blog/contacts/": "contacts",
-    "/blog/resume/": "resume",
-  }[pathname];
+    "/blog": "home",
+    "/blog/contacts": "contacts",
+    "/blog/resume": "resume",
+  }[pathname.replace(/\/$/, "")];
 
   return (
     <Affix offsetTop={0}>
