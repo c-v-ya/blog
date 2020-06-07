@@ -9,14 +9,21 @@ title: "Resume"
 
 ## Work experience
 
-### Python developer, [SimbirSoft](https://www.simbirsoft.com/)
+### Code Reviewer, [Practicum by Yandex](https://praktikum.yandex.ru)
+
+March, 2020 &ndash; Present.
+
+- Reviewed Python course students' code assignments, gave feedback, guided them to better decisions and best practices.
+
+### Python developer, [SimbirSoft](https://www.simbirsoft.com)
 
 November, 2019 &ndash; Present.
 
 - Developed back-end with containerization via Docker(Compose) according to clients ToR;
+- Had a hands on experience deploying an application with Amazon Web Services via console and Terraform (including Lambda, S3, SNS, SQS, Kinesis, EC2);
 - Worked in distributed teams by Agile with tech stack from Flask and Django to ElasticSearch and Apache Kafka.
 
-### Python developer, [AkBars Digital](https://akbars.digital/)
+### Python developer, [AkBars Digital](https://akbars.digital)
 
 January, 2019 &ndash; November, 2019.
 
