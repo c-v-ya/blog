@@ -10,8 +10,8 @@ const Nav = () => {
   const { pathname } = useLocation();
   const selectedKey = {
     "/blog/": "home",
-    "/blog/contacts": "contacts",
-    "/blog/resume": "resume",
+    "/blog/contacts/": "contacts",
+    "/blog/resume/": "resume",
   }[pathname];
 
   return (
