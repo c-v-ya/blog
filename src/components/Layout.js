@@ -29,7 +29,7 @@ const Layout = ({ children }) => (
             React
           </a>
           ,{" "}
-          <a href="https://www.gatsbyjs.org" target="blank">
+          <a href="https://gatsbyjs.org" target="blank">
             Gatsby
           </a>
           ,{" "}

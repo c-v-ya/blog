@@ -71,7 +71,7 @@ export const postQuery = graphql`
     }
     file(relativePath: { eq: $imagePath }) {
       childImageSharp {
-        fluid(quality: 100, maxWidth: 1920) {
+        fluid(quality: 100, maxWidth: 1280) {
           ...GatsbyImageSharpFluid
         }
       }

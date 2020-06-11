@@ -36,10 +36,7 @@ const Home = ({ data }) => {
           itemLayout="vertical"
           size="large"
           pagination={{
-            onChange: (page) => {
-              console.log(page);
-            },
-            pageSize: 5,
+            pageSize: 7,
           }}
           dataSource={listData}
           renderItem={(item) => (

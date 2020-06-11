@@ -8,6 +8,8 @@ import {
   LinkedinOutlined,
   MediumOutlined,
   MailOutlined,
+  InstagramOutlined,
+  TwitterOutlined,
 } from "@ant-design/icons";
 
 import Layout from "../components/Layout";
@@ -69,6 +71,22 @@ const Contacts = () => (
           url="https://dev.to/c_v_ya"
           icon={<CodeOutlined />}
           name={"dev.to"}
+        />
+        .
+      </p>
+      <Divider />
+      <p>
+        I'm also somewhat active on{" "}
+        <NavSocial
+          url={"https://instagram.com/c.v.ya"}
+          icon={<InstagramOutlined />}
+          name={"Instagram"}
+        />{" "}
+        and{" "}
+        <NavSocial
+          url="https://twitter.com/c_v_ya"
+          icon={<TwitterOutlined />}
+          name={"Twitter"}
         />
         .
       </p>
