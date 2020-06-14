@@ -44,7 +44,7 @@ This way we won't need to override the `DJANGO_SETTINGS_MODULE` variable.
 
 ### Core
 
-Now create a directory for the core app `mkdir djact/apps/core` and the app itself `python manage.py createapp core djact/apps/core`. Inside this newly created directory `mkdir {templates,templatetags}`.
+Now create a directory for the core app `mkdir djact/apps/core` and the app itself `python manage.py startapp core djact/apps/core`. Inside this newly created directory `mkdir {templates,templatetags}`.
 Create an empty `__init__.py` and react loader templatetag `load_react.py` inside `templatetags` dir:
 
 ```python
