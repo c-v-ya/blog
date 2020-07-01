@@ -44,7 +44,7 @@ This way we won't need to override the `DJANGO_SETTINGS_MODULE` variable.
 
 ### Core
 
-Now create a directory for the core app `mkdir djact/apps/core` and the app itself `python manage.py createapp core djact/apps/core`. Inside this newly created directory `mkdir {templates,templatetags}`.
+Now create a directory for the core app `mkdir djact/apps/core` and the app itself `python manage.py startapp core djact/apps/core`. Inside this newly created directory `mkdir {templates,templatetags}`.
 Create an empty `__init__.py` and react loader templatetag `load_react.py` inside `templatetags` dir:
 
 ```python
@@ -571,7 +571,7 @@ success Saved package.json
 Done in 34.53s.
 ```
 
-Now we can add dependencies with `yarn add react react-dom axios react-redux redux redux-thunk reselect webpack webpack-cli babel-loader @babel/core @babel/node @babel/preset-env @babel/preset-react`. And our dev dependencies with `yarn add -D eslint babel-eslint babel-polyfill eslint-plugin-import eslint-plugin-react eslint-plugin-react-hooks eslint-loader style-loader css-loader postcss-loader webpack-dev-server mini-css-extract-plugin cssnano html-webpack-plugin npm-run-all rimraf redux-immutable-state-invariant`.
+Now we can add dependencies with `yarn add react react-dom axios react-redux redux redux-thunk reselect`. And our dev dependencies with `yarn add -D eslint babel-eslint babel-polyfill eslint-plugin-import eslint-plugin-react eslint-plugin-react-hooks eslint-loader style-loader css-loader postcss-loader webpack-dev-server mini-css-extract-plugin cssnano html-webpack-plugin npm-run-all rimraf redux-immutable-state-invariant webpack webpack-cli babel-loader @babel/core @babel/node @babel/preset-env @babel/preset-react`.
 
 ## Configuring
 
@@ -670,14 +670,6 @@ module.exports = {
         use: [
           {
             loader: "babel-loader",
-            options: {
-              plugins: [
-                [
-                  "import",
-                  { libraryName: "antd", libraryDirectory: "es", style: "css" },
-                ],
-              ],
-            },
           },
           "eslint-loader",
         ],
@@ -828,14 +820,6 @@ module.exports = {
         use: [
           {
             loader: "babel-loader",
-            options: {
-              plugins: [
-                [
-                  "import",
-                  { libraryName: "antd", libraryDirectory: "es", style: "css" },
-                ],
-              ],
-            },
           },
           "eslint-loader",
         ],
@@ -1403,7 +1387,7 @@ Last thing to do is to update our `App.js`:
 ```js
 // frontend/src/components/App.js
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import {Route, Switch} from "react-router-dom";
 
 import PageNotFound from "./PageNotFound";
 import Header from "./common/Header";
@@ -1415,12 +1399,12 @@ import SignUpPage from "./authentication/SignUpPage";
 function App() {
   return (
     <>
-      <Header />
+      <Header/>
       <Switch>
-        <PrivateRoute exact path="/" component={ProfilePage} />
-        <Route path="/login" component={LoginPage} />
-        <Route path="/sign-up" component={SignUpPage} />
-        <Route component={PageNotFound} />
+        <PrivateRoute exact path="/" component={ProfilePage}/>
+        <Route path="/login" component={LoginPage}/>
+        <Route path="/sign-up" component={SignUpPage}/>
+        <Route component={PageNotFound}/>
       </Switch>
     </>
   );
@@ -1428,6 +1412,7 @@ function App() {
 
 export default App;
 ```
+
 
 Our final project structure should look like this:
 
@@ -1523,7 +1508,7 @@ Our final project structure should look like this:
 
 # Running
 
-Now, set environment variables `export $(cat .env | xargs)`. Build the frontend part `cd frontend && yarn:build`. Create superuser for testing with `cd ../ && python manage.py createsuperuser` and follow instructions. Run Django app `python manage.py runserver` and navigate to http://localhost:8000. We should see our login page. Enter credentials you provided when created superuser and we'll get to a protected Profile page. If we click on a `GET protected` button we would see the alert with response from the server.
+Now, set environment variables `export $(cat .env | xargs)`. Build the frontend part `cd frontend && yarn:build`. Create superuser for testing with `cd ../ && python manage.py createsuperuser` and follow instructions. Run Django app `python manage.py runserver` and navigate to http://localhost:8000. We should see our login page. Enter credentials you provided when created superuser and we'll get to a protected Profile page. If we click on a `GET protected` button we would see the alert with response from the server.
 
 And that's it! If you're came all the way down here.. wow! And if you've actually implemented all of this.. WOW!! Outstanding job, my friend! Hope you've learned new things or solved a problem of yours :rocket:
 
