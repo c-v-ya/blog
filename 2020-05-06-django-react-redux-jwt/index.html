@@ -23,7 +23,7 @@ from .settings import *</code>
 <p>Here and in every file listing first line will be a comment with a relative path to the file. Just so you know.</p>
 <p>This way we won't need to override the <code class="language-text">DJANGO_SETTINGS_MODULE</code> variable.</p>
 <h3>Core</h3>
-<p>Now create a directory for the core app <code class="language-text">mkdir djact/apps/core</code> and the app itself <code class="language-text">python manage.py createapp core djact/apps/core</code>. Inside this newly created directory <code class="language-text">mkdir {templates,templatetags}</code>.
+<p>Now create a directory for the core app <code class="language-text">mkdir djact/apps/core</code> and the app itself <code class="language-text">python manage.py startapp core djact/apps/core</code>. Inside this newly created directory <code class="language-text">mkdir {templates,templatetags}</code>.
 Create an empty <code class="language-text">__init__.py</code> and react loader templatetag <code class="language-text">load_react.py</code> inside <code class="language-text">templatetags</code> dir:</p>
 
         <deckgo-highlight-code language="python"  theme="monokai" line-numbers="true" >
@@ -540,7 +540,7 @@ success Saved package.json
 Done in 34.53s.</code>
         </deckgo-highlight-code>
       
-<p>Now we can add dependencies with <code class="language-text">yarn add react react-dom axios react-redux redux redux-thunk reselect webpack webpack-cli babel-loader @babel/core @babel/node @babel/preset-env @babel/preset-react</code>. And our dev dependencies with <code class="language-text">yarn add -D eslint babel-eslint babel-polyfill eslint-plugin-import eslint-plugin-react eslint-plugin-react-hooks eslint-loader style-loader css-loader postcss-loader webpack-dev-server mini-css-extract-plugin cssnano html-webpack-plugin npm-run-all rimraf redux-immutable-state-invariant</code>.</p>
+<p>Now we can add dependencies with <code class="language-text">yarn add react react-dom axios react-redux redux redux-thunk reselect</code>. And our dev dependencies with <code class="language-text">yarn add -D eslint babel-eslint babel-polyfill eslint-plugin-import eslint-plugin-react eslint-plugin-react-hooks eslint-loader style-loader css-loader postcss-loader webpack-dev-server mini-css-extract-plugin cssnano html-webpack-plugin npm-run-all rimraf redux-immutable-state-invariant webpack webpack-cli babel-loader @babel/core @babel/node @babel/preset-env @babel/preset-react</code>.</p>
 <h2>Configuring</h2>
 <p>Create <code class="language-text">.eslintrc.js</code> in current directory with following content:</p>
 
@@ -637,14 +637,6 @@ module.exports = {
         use: [
           {
             loader: &quot;babel-loader&quot;,
-            options: {
-              plugins: [
-                [
-                  &quot;import&quot;,
-                  { libraryName: &quot;antd&quot;, libraryDirectory: &quot;es&quot;, style: &quot;css&quot; },
-                ],
-              ],
-            },
           },
           &quot;eslint-loader&quot;,
         ],
@@ -793,14 +785,6 @@ module.exports = {
         use: [
           {
             loader: &quot;babel-loader&quot;,
-            options: {
-              plugins: [
-                [
-                  &quot;import&quot;,
-                  { libraryName: &quot;antd&quot;, libraryDirectory: &quot;es&quot;, style: &quot;css&quot; },
-                ],
-              ],
-            },
           },
           &quot;eslint-loader&quot;,
         ],
@@ -1366,7 +1350,7 @@ export default ProfilePage;</code>
         <deckgo-highlight-code language="js"  theme="monokai" line-numbers="true" >
           <code slot="code">// frontend/src/components/App.js
 import React from &quot;react&quot;;
-import { Route, Switch } from &quot;react-router-dom&quot;;
+import {Route, Switch} from &quot;react-router-dom&quot;;
 
 import PageNotFound from &quot;./PageNotFound&quot;;
 import Header from &quot;./common/Header&quot;;
@@ -1378,12 +1362,12 @@ import SignUpPage from &quot;./authentication/SignUpPage&quot;;
 function App() {
   return (
     &lt;&gt;
-      &lt;Header /&gt;
+      &lt;Header/&gt;
       &lt;Switch&gt;
-        &lt;PrivateRoute exact path=&quot;/&quot; component={ProfilePage} /&gt;
-        &lt;Route path=&quot;/login&quot; component={LoginPage} /&gt;
-        &lt;Route path=&quot;/sign-up&quot; component={SignUpPage} /&gt;
-        &lt;Route component={PageNotFound} /&gt;
+        &lt;PrivateRoute exact path=&quot;/&quot; component={ProfilePage}/&gt;
+        &lt;Route path=&quot;/login&quot; component={LoginPage}/&gt;
+        &lt;Route path=&quot;/sign-up&quot; component={SignUpPage}/&gt;
+        &lt;Route component={PageNotFound}/&gt;
       &lt;/Switch&gt;
     &lt;/&gt;
   );
@@ -1485,7 +1469,7 @@ export default App;</code>
         </deckgo-highlight-code>
       
 <h1>Running</h1>
-<p>Now, set environment variables <code class="language-text">export $(cat .env | xargs)</code>. Build the frontend part <code class="language-text">cd frontend &amp;&amp; yarn:build</code>. Create superuser for testing with <code class="language-text">cd ../ &amp;&amp; python manage.py createsuperuser</code> and follow instructions. Run Django app <code class="language-text">python manage.py runserver</code> and navigate to <a href="http://localhost:8000">http://localhost:8000</a>. We should see our login page. Enter credentials you provided when created superuser and we'll get to a protected Profile page. If we click on a <code class="language-text">GET protected</code> button we would see the alert with response from the server.</p>
+<p>Now, set environment variables <code class="language-text">export $(cat .env | xargs)</code>. Build the frontend part <code class="language-text">cd frontend &amp;&amp; yarn:build</code>. Create superuser for testing with <code class="language-text">cd ../ &amp;&amp; python manage.py createsuperuser</code> and follow instructions. Run Django app <code class="language-text">python manage.py runserver</code> and navigate to <a href="http://localhost:8000">http://localhost:8000</a>. We should see our login page. Enter credentials you provided when created superuser and we'll get to a protected Profile page. If we click on a <code class="language-text">GET protected</code> button we would see the alert with response from the server.</p>
 <p>And that's it! If you're came all the way down here.. wow! And if you've actually implemented all of this.. WOW!! Outstanding job, my friend! Hope you've learned new things or solved a problem of yours 🚀</p>
 <p>Thank you and happy coding!</p>
 <h1>Resources</h1>
