@@ -9,6 +9,8 @@ image: "mae-mu-ecUVGNZA1TM-unsplash.jpg"
 
 ## Reducing code smelling with a help from first class citizens
 
+_Photo by_ [_Mae Mu_](https://unsplash.com/@picoftasty?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) _on_ [_Unsplash_](https://unsplash.com/s/photos/pancakes?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+
 Recently I've encountered a situation where `elif's` stacked on top of each other like pancakes.
 For example, we are parsing different file formats. Our parsers are ready and we just need a higher level interface.
 

@@ -9,6 +9,8 @@ image: "sharon-mccutcheon-s4RaGIo2eYI-unsplash.jpg"
 
 ## How to get a value from a Python dictionary and not get punched by a KeyError
 
+_Photo by_ [_Sharon McCutcheon_](https://unsplash.com/@sharonmccutcheon?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) _on_ [_Unsplash_](https://unsplash.com/s/photos/donut?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+
 Let's say you have some dictionary with donuts:
 
 ```python

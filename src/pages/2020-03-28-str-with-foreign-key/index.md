@@ -9,6 +9,8 @@ image: "israel-palacio-ImcUkZ72oUs-unsplash.jpg"
 
 # Cutting database queries by not referencing Foreign Keys
 
+_Photo by_ [_israel palacio_](https://unsplash.com/@othentikisra?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) _on_ [_Unsplash_](https://unsplash.com/@othentikisra?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+
 So you have a model with foreign key:
 
 ```python

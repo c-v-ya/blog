@@ -9,6 +9,8 @@ image: "efe-yagiz-soysal-XcJDpwrbMyg-unsplash.jpg"
 
 ## How not to think about consequences when acquiring resources
 
+_Photo by_ [_Efe Yağız Soysal_](https://unsplash.com/@efeyagizs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) _on_ [_Unsplash_](https://unsplash.com/@efeyagizs?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+
 Imagine this: you automated some actions on a webpage via Selenium
 and it works fine. But there are times when it might crash.
 You don't want to `if` every single step that can go wrong.
