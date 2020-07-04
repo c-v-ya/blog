@@ -23,6 +23,10 @@ const Home = ({ data }) => {
     return listData;
   });
 
+  const scrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <Layout>
       <Col
@@ -40,7 +44,10 @@ const Home = ({ data }) => {
           }}
           dataSource={listData}
           renderItem={(item) => (
-            <List.Item key={`${item.date}__${item.title}`}>
+            <List.Item
+              key={`${item.date}__${item.title}`}
+              onClick={scrollToTop()}
+            >
               <List.Item.Meta
                 title={<Link to={item.path}>{item.title}</Link>}
                 description={item.description}
