@@ -27,7 +27,7 @@ foo(1, 2, 3, 4, f=5, g=6)
 ['f: 5', 'g: 6']
 ```
 
-`1` and `2` are our required arguments. `3` and `4` would be our args. `f=5` and `g=6` are kwargs.
+`1` and `2` are our required arguments. `3` and `4` would be our `args`. `f=5` and `g=6` are `kwargs`.
 
 But the cool thing I started to implement not so long ago is arguments unpacking. Basically, you tell your function to get a list or dictionary of arguments and use values (or keys and values) as parameters.
 

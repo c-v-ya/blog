@@ -24,7 +24,9 @@ const Home = ({ data }) => {
   });
 
   const scrollToTop = () => {
-    window.scrollTo(0, 0);
+    try {
+      window.scrollTo(0, 0);
+    } catch (e) {}
   };
 
   return (
