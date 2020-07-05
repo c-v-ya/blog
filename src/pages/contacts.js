@@ -42,7 +42,7 @@ const Contacts = () => (
       <p>
         The best way to contact me is via email{" "}
         <NavSocial
-          url="mailto:ceeveeya@gmail.com"
+          href="mailto:ceeveeya@gmail.com"
           icon={<MailOutlined />}
           name={"ceeveeya@gmail.com"}
         />

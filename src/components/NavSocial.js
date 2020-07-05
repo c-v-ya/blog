@@ -1,11 +1,17 @@
 import React from "react";
 import { Link } from "gatsby";
 
-const NavSocial = ({ url, icon, name }) => (
+const NavSocial = ({ url, icon, name, ...rest }) => (
   <span>
-    <Link to={url} target="blank">
-      {icon} {name}
-    </Link>
+    {url ? (
+      <Link to={url} target="blank">
+        {icon} {name}
+      </Link>
+    ) : (
+      <a href={rest.href} target="blank">
+        {icon} {name}
+      </a>
+    )}
   </span>
 );
 
