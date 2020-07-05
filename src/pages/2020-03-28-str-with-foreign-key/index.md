@@ -5,6 +5,7 @@ title: "Why ForeignKey reference in Django model's __str__ method is a bad idea"
 author: "Constantine Yarushkin"
 description: "Cutting database queries by not referencing Foreign Keys"
 image: "israel-palacio-ImcUkZ72oUs-unsplash.jpg"
+tags: "python, django, database optimization"
 ---
 
 # Cutting database queries by not referencing Foreign Keys

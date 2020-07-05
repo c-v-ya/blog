@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { graphql, Link } from "gatsby";
 import Img from "gatsby-image";
 import { Col, Divider } from "antd";
@@ -9,26 +10,44 @@ import Layout from "../components/Layout";
 const Template = ({ data, pageContext }) => {
   const post = data.markdownRemark;
   const image = data.file ? data.file.childImageSharp.fluid : null;
-  const { title, date } = post.frontmatter;
+  const { title, date, description, tags, path } = post.frontmatter;
   const { next, prev } = pageContext;
 
   return (
     <Layout>
+      <Helmet>
+        <title>{title}</title>
+        <meta
+          charSet="utf-8"
+          name="description"
+          property="og:description"
+          content={`Post "${description}" on Constantine's blog`}
+        />
+        <meta name="keywords" content={tags}></meta>
+        <meta name="author" content="Constantine Yarushkin"></meta>
+        <link rel="canonical" href={`https://c-v-ya.github.io/blog${path}`} />
+      </Helmet>
       <Col
         xs={{ span: 24 }}
         lg={{ span: 12, offset: 4 }}
         style={{ padding: "1rem" }}
       >
         <h1>{title}</h1>
-        <p style={{ textAlign: "right" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "flex-end",
+            paddingBottom: "0.5rem",
+          }}
+        >
           <em>{date}</em>
           <Divider type="vertical" />
-          <span>{post.timeToRead} min to read</span>
-        </p>
+          <span>{post.timeToRead} min read</span>
+        </div>
         {image && (
-          <p>
+          <div style={{ paddingBottom: "0.5rem" }}>
             <Img fluid={image} />
-          </p>
+          </div>
         )}
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <Divider />
@@ -65,6 +84,8 @@ export const postQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         path
+        description
+        tags
       }
       html
       timeToRead

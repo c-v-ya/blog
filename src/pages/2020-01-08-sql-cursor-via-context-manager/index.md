@@ -5,13 +5,14 @@ title: "SQL Cursor via Context Manager"
 author: "Constantine Yarushkin"
 description: "Automatically closing database connection with Context Manager"
 image: "taylor-vick-M5tzZtFCOfs-unsplash.jpg"
+tags: "python, sql, context manager"
 ---
 
 ## Automatically closing database connection with Context Manager
 
 _Photo by_ [_Taylor Vick_](https://unsplash.com/@tvick?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) _on_ [_Unsplash_](https://unsplash.com/@tvick?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
 
-If you don't know what a Context Manager is I recommend you to read about them. Dan Bader wrote a good article. But since you are here, why not read [my post](https://c-v-ya.github.io/blog/2019/11/04/why-context-manager-is-useful.html)?
+If you don't know what a Context Manager is I recommend you to read about them. Dan Bader wrote a good article. But since you are here, why not read [my post](https://c-v-ya.github.io/blog/2019-11-04-why-context-manager-is-useful)?
 
 Now, it's nothing special to write a cursor. You need a driver and credentials to connect to the database. In this example I'll use MySQL driver. My credentials are stored in `settings.py` (not in plain text but environment variables) as a dictionary.
 

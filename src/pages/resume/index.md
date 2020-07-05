@@ -1,6 +1,7 @@
 ---
 path: "/resume-md"
 title: "Resume"
+tags: "python, django, react, aws, sql, web development, blog, resume, cv, experience"
 ---
 
 # Constantine Yarushkin &mdash; Python developer

@@ -5,6 +5,7 @@ title: "** or arguments unpacking in Python"
 author: "Constantine Yarushkin"
 description: "How you could use arguments unpacking"
 image: "markus-spiske-n2M2g5G7b88-unsplash.jpg"
+tags: "python, django, beginners"
 ---
 
 # How you could use arguments unpacking

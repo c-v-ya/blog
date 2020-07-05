@@ -21,13 +21,13 @@ exports.createPages = ({ graphql, actions }) => {
                   author
                   description
                   image
+                  tags
                 }
               }
             }
           }
         }
       `).then((result) => {
-        console.log(result);
         const posts = result.data.allMarkdownRemark.edges;
 
         posts.forEach(({ node }, index) => {

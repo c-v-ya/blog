@@ -5,6 +5,7 @@ title: "Why Context Manager is useful"
 author: "Constantine Yarushkin"
 description: "How not to think about consequences when acquiring resources"
 image: "efe-yagiz-soysal-XcJDpwrbMyg-unsplash.jpg"
+tags: "python, sql, context manager, beginners"
 ---
 
 ## How not to think about consequences when acquiring resources

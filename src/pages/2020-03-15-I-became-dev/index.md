@@ -5,6 +5,7 @@ title: "How I Became a Developer"
 author: "Constantine Yarushkin"
 description: "I was spending two hours on job duties and could read books in the remaining time. But decided to change this."
 image: "python.png"
+tags: "python, django, career"
 ---
 
 # I was spending two hours on job duties and could read books in the remaining time. But decided to change this.

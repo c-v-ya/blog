@@ -4,6 +4,7 @@ date: "2020-05-06"
 title: "Django + React, Redux and JWT"
 author: "Constantine Yarushkin"
 description: "On the way to a full stack dev"
+tags: "python, django, react, redux, jwt"
 ---
 
 # Preface
@@ -1387,7 +1388,7 @@ Last thing to do is to update our `App.js`:
 ```js
 // frontend/src/components/App.js
 import React from "react";
-import {Route, Switch} from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 import PageNotFound from "./PageNotFound";
 import Header from "./common/Header";
@@ -1399,12 +1400,12 @@ import SignUpPage from "./authentication/SignUpPage";
 function App() {
   return (
     <>
-      <Header/>
+      <Header />
       <Switch>
-        <PrivateRoute exact path="/" component={ProfilePage}/>
-        <Route path="/login" component={LoginPage}/>
-        <Route path="/sign-up" component={SignUpPage}/>
-        <Route component={PageNotFound}/>
+        <PrivateRoute exact path="/" component={ProfilePage} />
+        <Route path="/login" component={LoginPage} />
+        <Route path="/sign-up" component={SignUpPage} />
+        <Route component={PageNotFound} />
       </Switch>
     </>
   );
@@ -1412,7 +1413,6 @@ function App() {
 
 export default App;
 ```
-
 
 Our final project structure should look like this:
 
@@ -1508,7 +1508,7 @@ Our final project structure should look like this:
 
 # Running
 
-Now, set environment variables `export $(cat .env | xargs)`. Build the frontend part `cd frontend && yarn:build`. Create superuser for testing with `cd ../ && python manage.py createsuperuser` and follow instructions. Run Django app `python manage.py runserver` and navigate to http://localhost:8000. We should see our login page. Enter credentials you provided when created superuser and we'll get to a protected Profile page. If we click on a `GET protected` button we would see the alert with response from the server.
+Now, set environment variables `export $(cat .env | xargs)`. Build the frontend part `cd frontend && yarn:build`. Create superuser for testing with `cd ../ && python manage.py createsuperuser` and follow instructions. Run Django app `python manage.py runserver` and navigate to http://localhost:8000. We should see our login page. Enter credentials you provided when created superuser and we'll get to a protected Profile page. If we click on a `GET protected` button we would see the alert with response from the server.
 
 And that's it! If you're came all the way down here.. wow! And if you've actually implemented all of this.. WOW!! Outstanding job, my friend! Hope you've learned new things or solved a problem of yours :rocket:
 

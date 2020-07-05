@@ -5,6 +5,7 @@ title: "Getting values from a Python dictionary"
 author: "Constantine Yarushkin"
 description: "How to get a value from a Python dictionary and not get punched by a KeyError"
 image: "sharon-mccutcheon-s4RaGIo2eYI-unsplash.jpg"
+tags: "python, dictionary, beginners"
 ---
 
 ## How to get a value from a Python dictionary and not get punched by a KeyError

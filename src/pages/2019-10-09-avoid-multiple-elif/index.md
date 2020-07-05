@@ -5,6 +5,7 @@ title: "Avoid multiple ElIf situation"
 author: "Constantine Yarushkin"
 description: "Reducing code smelling with a help from first class citizens"
 image: "mae-mu-ecUVGNZA1TM-unsplash.jpg"
+tags: "python, if statement, dictionary, beginners"
 ---
 
 ## Reducing code smelling with a help from first class citizens

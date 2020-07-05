@@ -1,5 +1,4 @@
 import React from "react";
-import { Helmet } from "react-helmet";
 import PropTypes from "prop-types";
 import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
 import { Row, Col, BackTop, Divider } from "antd";
@@ -11,11 +10,6 @@ deckDeckGoHighlightElement();
 
 const Layout = ({ children }) => (
   <>
-    <Helmet>
-      <meta charSet="utf-8" />
-      <title>Constantine's blog</title>
-      <link rel="canonical" href="https://c-v-ya.github.io/blog" />
-    </Helmet>
     <Row>
       <Col xs={{ span: 24 }} lg={{ span: 4 }}>
         <Nav />

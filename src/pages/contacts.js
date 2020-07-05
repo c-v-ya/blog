@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { Link } from "gatsby";
 import { Divider, Col } from "antd";
 import {
@@ -17,6 +18,21 @@ import NavSocial from "../components/NavSocial";
 
 const Contacts = () => (
   <Layout>
+    <Helmet>
+      <title>Constantine's contacts</title>
+      <meta
+        charSet="utf-8"
+        name="description"
+        property="og:description"
+        content="Constantine's contacts"
+      />
+      <meta
+        name="keywords"
+        content="python, django, react, web development, blog, contacts"
+      ></meta>
+      <meta name="author" content="Constantine Yarushkin"></meta>
+      <link rel="canonical" href="https://c-v-ya.github.io/blog/contacts" />
+    </Helmet>
     <Col
       xs={{ span: 24 }}
       lg={{ span: 10, offset: 4 }}
