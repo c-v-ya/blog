@@ -38,20 +38,28 @@ Set <code class="language-text">Name: pg</code>, <code class="language-text">Ima
 <p>If Postgres was quite handful Redis is much easier. The steps are similar.</p>
 <ol>
 <li>Create volume</li>
-<li>Create container</li>
+<li>
+<p>Create container</p>
+<ul>
 <li>with port binding <code class="language-text">6379:6379</code>;</li>
 <li>map created volume to <code class="language-text">/data</code>;</li>
 <li>and, optionally, set restart policy.</li>
+</ul>
+</li>
 </ol>
 <p>Boom, done!</p>
 <h1>RabbitMQ</h1>
 <p>Next in line is Rabbit. It's so easy I don't even want to repeat 😀</p>
 <ol>
 <li>Create volume</li>
-<li>Create container</li>
+<li>
+<p>Create container</p>
+<ul>
 <li>with port bindings <code class="language-text">5672:5672</code> and <code class="language-text">15672:15672</code> for management;</li>
 <li>map created volume to <code class="language-text">/var/lib/rabbitmq</code>;</li>
 <li>and, if you want, set restart policy.</li>
+</ul>
+</li>
 </ol>
 <p>And again, done! 🎉</p>
 <h1>Summary</h1>
