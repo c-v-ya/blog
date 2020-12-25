@@ -57,10 +57,9 @@ If Postgres was quite handful Redis is much easier. The steps are similar.
 
 1. Create volume
 2. Create container
-
-- with port binding `6379:6379`;
-- map created volume to `/data`;
-- and, optionally, set restart policy.
+   - with port binding `6379:6379`;
+   - map created volume to `/data`;
+   - and, optionally, set restart policy.
 
 Boom, done!
 
@@ -70,10 +69,9 @@ Next in line is Rabbit. It's so easy I don't even want to repeat :grinning:
 
 1. Create volume
 2. Create container
-
-- with port bindings `5672:5672` and `15672:15672` for management;
-- map created volume to `/var/lib/rabbitmq`;
-- and, if you want, set restart policy.
+   - with port bindings `5672:5672` and `15672:15672` for management;
+   - map created volume to `/var/lib/rabbitmq`;
+   - and, if you want, set restart policy.
 
 And again, done! :tada:
 
