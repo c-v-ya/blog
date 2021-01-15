@@ -39,3 +39,27 @@ But in our case it's not a simple query. If you really want to fix that you woul
 When I encountered this problem the solution that has been accepted was just removing the reference to `ForeingKey` from the `__str__` method ¯\\\_(ツ)\_/¯
 
 _A little ToDo for myself: find a way to solve this via select_\__related_.
+
+# UPDATE after half a year
+
+For some time I didn't face this problem but not long ago I did. So, as I said, the solution to this is quite simple. All we need to do is to redefine `get_queryset` method on admin model. For example:
+
+```python
+@admin.register(models.Book)
+class BookAdmin(admin.ModelAdmin):
+    def get_queryset(self, request):
+        qs = self.model._default_manager.select_related(
+            'author',
+        )
+        # This stuff is marked as TODO in Django 3.1
+        # so it might change in the future
+        ordering = self.get_ordering(request)
+        if ordering:
+            qs = qs.order_by(*ordering)
+
+        return qs
+```
+
+Now there will be just one query per record, containing `JOIN` clause, hitting our database.
+
+Optimization FTW :smirk:
