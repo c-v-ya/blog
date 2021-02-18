@@ -32,7 +32,7 @@ Then finish the initial setup. Again, everything is described in the [docs](http
 
 After it's done you can navigate to [localhost:9000](http://localhost:9000) and see the Portainer dashboard.
 
-Now you can monitor your containers, attach to them, check logs, see and remove unused images and volumes, and do everything you could do from terminal. But you don't need to google or remember those lengthy commands.
+Now you can monitor your containers, attach to them, check logs, see and remove unused images and volumes, and do everything you could do from the terminal. But you don't need to google or remember those lengthy commands.
 
 Allright, let's go!
 
@@ -40,10 +40,14 @@ Allright, let's go!
 
 As we need to have a persistent storage for our DB let's create a volume. Go to "Volumes" tab in Portainer and push that "Add volume" button. Give it a name, e.g. `pg_data` and hit "Create the volume".
 
-Then go to "Containers" tab and smash "Add container" button.
+Then go to the "Containers" tab and smash the "Add container" button.
 Set `Name: pg`, `Image: postgres:latest`, on "Manual network port publishing" click plus sign and enter `5432` for both "host" and "container".
 
-Next in "Advanced container settings" section leave everything as is on "Command and logging tab". Move to "Volumes" tab, hit plus sign and map `/var/lib/postgresql/data` to our `pg_data` volume. After that to the "Env" tab. Set `POSTGRES_PASSWORD` to, well, root password for the database. Let's say it will be `password`. I also like to set `unless stopped` on "Restart policy" tab. Now we are ready to smash that "Deploy the container" button above our advanced settings section.
+Next in the "Advanced container settings" section leave everything as is on "Command and logging tab". Move to the "Volumes" tab, hit plus sign and map `/var/lib/postgresql/data` to our `pg_data` volume. After that to the "Env" tab. Set `POSTGRES_PASSWORD` to, well, root password for the database. Let's say it will be `password`. I also like to set `unless stopped` on the "Restart policy" tab. Now we are ready to smash that "Deploy the container" button above our advanced settings section.
+
+Here is an example screenshot:
+
+![Postgres create container](https://dev-to-uploads.s3.amazonaws.com/i/qfvj9baubw83umlgtjv7.png)
 
 Where do I get those variables and values? Docker Hub! Just open the service page and it's all there.
 
@@ -53,10 +57,11 @@ And we can now connect to Postgres via `localhost:5432` as `postgres` user and `
 
 # Redis
 
-If Postgres was quite handful Redis is much easier. The steps are similar.
+If Postgres was quite a handful, Redis is much easier. The steps are similar.
 
 1. Create volume
 2. Create container
+   - from `redis:latest`
    - with port binding `6379:6379`;
    - map created volume to `/data`;
    - and, optionally, set restart policy.
@@ -69,6 +74,7 @@ Next in line is Rabbit. It's so easy I don't even want to repeat :grinning:
 
 1. Create volume
 2. Create container
+   - from `rabbitmq:3-management`
    - with port bindings `5672:5672` and `15672:15672` for management;
    - map created volume to `/var/lib/rabbitmq`;
    - and, if you want, set restart policy.
