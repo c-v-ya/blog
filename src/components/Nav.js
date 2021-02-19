@@ -11,6 +11,7 @@ const Nav = () => {
     "/blog/tools": "tools",
     "/blog/contacts": "contacts",
     "/blog/resume": "resume",
+    "/blog/resume-ru": "resume-ru",
   }[pathname.replace(/\/$/, "")];
 
   return (
@@ -105,7 +106,7 @@ const Nav = () => {
               <li className="items-center">
                 <Link
                   className={`${
-                    selectedKey === "resume"
+                    ["resume", "resume-ru"].includes(selectedKey)
                       ? "text-pink-500 hover:text-pink-600"
                       : "text-gray-800 hover:text-gray-600"
                   } text-xs uppercase py-3 font-bold block`}
@@ -113,7 +114,9 @@ const Nav = () => {
                 >
                   <i
                     className={`${
-                      selectedKey === "resume" ? "" : "text-gray-500"
+                      ["resume", "resume-ru"].includes(selectedKey)
+                        ? ""
+                        : "text-gray-500"
                     } fas fa-file-alt  mr-2 text-sm`}
                   ></i>{" "}
                   Resume
