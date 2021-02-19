@@ -10,7 +10,11 @@ exports.createPages = ({ graphql, actions }) => {
         query {
           allMarkdownRemark(
             sort: { fields: [frontmatter___date], order: DESC }
-            filter: { frontmatter: { title: { ne: "Resume" } } }
+            filter: {
+              frontmatter: {
+                path: { nin: ["/resume-md", "/resume-ru-md", "/tools-md"] }
+              }
+            }
           ) {
             edges {
               node {

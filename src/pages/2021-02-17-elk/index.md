@@ -3,7 +3,7 @@ path: "/2021-02-17-elk"
 date: "2021-02-17"
 title: "Setting Up Local ELK Stack"
 author: "Constantine Yarushkin"
-description: ""
+description: "Taming ElasticSearch, Logstash and Kibana"
 image: "chandler-cruttenden-sDrnyCEAAiI-unsplash.jpg"
 tags: "docker"
 ---

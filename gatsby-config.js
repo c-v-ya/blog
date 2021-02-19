@@ -9,7 +9,6 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-antd`,
     `gatsby-plugin-postcss`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -34,7 +33,6 @@ module.exports = {
             resolve: `gatsby-remark-highlight-code`,
             options: {
               theme: "monokai",
-              lineNumbers: true,
             },
           },
           {

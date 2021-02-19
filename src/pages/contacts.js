@@ -1,17 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import { Link } from "gatsby";
-import { Divider, Col } from "antd";
-import {
-  CodeOutlined,
-  GithubOutlined,
-  GitlabOutlined,
-  LinkedinOutlined,
-  MediumOutlined,
-  MailOutlined,
-  InstagramOutlined,
-  TwitterOutlined,
-} from "@ant-design/icons";
 
 import Layout from "../components/Layout";
 import NavSocial from "../components/NavSocial";
@@ -33,80 +22,76 @@ const Contacts = () => (
       <meta name="author" content="Constantine Yarushkin"></meta>
       <link rel="canonical" href="https://c-v-ya.github.io/blog/contacts" />
     </Helmet>
-    <Col
-      xs={{ span: 24 }}
-      lg={{ span: 10, offset: 4 }}
-      style={{ padding: "1rem" }}
-    >
-      <h1>Contacts</h1>
+    <div className="flex flex-wrap mx-auto max-w-5xl px-4 md:px-8 py-2 md:py-4 bg-white rounded-lg shadow-md">
+      <div className="text-2xl lg:text-4xl mb-4">Contacts</div>
       <p>
         The best way to contact me is via email{" "}
         <NavSocial
           href="mailto:ceeveeya@gmail.com"
-          icon={<MailOutlined />}
+          icon={<i className="fa fa-envelope" />}
           name={"ceeveeya@gmail.com"}
         />
         . Yes, I actually read and respond there.
       </p>
-      <Divider />
+      <hr />
       <p>
         Connect with me on{" "}
         <NavSocial
           url={"https://www.linkedin.com/in/constantine-yarushkin"}
-          icon={<LinkedinOutlined />}
+          icon={<i className="fab fa-linkedin-in" />}
           name={"LinkedIn"}
         />{" "}
         . Just for future opportunities, who knows how life could turn around.
       </p>
-      <Divider />
+      <hr />
       <p>
         You can find my code on{" "}
         <NavSocial
           url={"https://github.com/c-v-ya"}
-          icon={<GithubOutlined />}
+          icon={<i className="fab fa-github" />}
           name={"GitHub"}
         />{" "}
         and{" "}
         <NavSocial
           url={"https://gitlab.com/c.v.ya"}
-          icon={<GitlabOutlined />}
+          icon={<i className="fab fa-gitlab" />}
           name={"GitLab"}
         />
         . Although the repositories there are identical.
       </p>
-      <Divider />
+      <hr />
       <p>
         All my writings in <Link to="/">blog</Link> are also available on{" "}
         <NavSocial
           url={"https://medium.com/@c.v.ya"}
-          icon={<MediumOutlined />}
+          icon={<i className="fab fa-medium" />}
           name={"Medium"}
         />{" "}
         and{" "}
         <NavSocial
           url="https://dev.to/c_v_ya"
-          icon={<CodeOutlined />}
+          icon={<i className="fab fa-dev" />}
           name={"dev.to"}
         />
         .
       </p>
-      <Divider />
+      <hr />
       <p>
         I'm also somewhat active on{" "}
         <NavSocial
           url={"https://instagram.com/c.v.ya"}
-          icon={<InstagramOutlined />}
+          icon={<i className="fab fa-instagram" />}
           name={"Instagram"}
         />{" "}
         and{" "}
         <NavSocial
           url="https://twitter.com/c_v_ya"
-          icon={<TwitterOutlined />}
+          icon={<i className="fab fa-twitter" />}
           name={"Twitter"}
         />
         .
       </p>
-    </Col>
+    </div>
   </Layout>
 );
 

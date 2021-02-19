@@ -1,11 +1,13 @@
-import React from "react";
-import { Helmet } from "react-helmet";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { graphql, Link } from "gatsby";
-
-import { Col, List, Divider } from "antd";
+import { Helmet } from "react-helmet";
+import { graphql } from "gatsby";
+import InfiniteScroll from "react-infinite-scroll-component";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import "@fortawesome/free-brands-svg-icons/faCss3";
 
 import Layout from "../components/Layout";
+import PostCard from "../components/PostCard";
 
 const Home = ({ data }) => {
   const listData = [];
@@ -24,10 +26,26 @@ const Home = ({ data }) => {
     return listData;
   });
 
-  const scrollToTop = () => {
-    try {
-      window.scrollTo(0, 0);
-    } catch (e) {}
+  const [count, setCount] = useState({
+    prev: 0,
+    next: 10,
+  });
+  const [hasMore, setHasMore] = useState(true);
+  const [current, setCurrent] = useState(
+    listData.slice(count.prev, count.next)
+  );
+  const getMorePosts = () => {
+    if (current.length === listData.length) {
+      setHasMore(false);
+      return;
+    }
+    setCurrent(
+      current.concat(listData.slice(count.prev + 10, count.next + 10))
+    );
+    setCount((prevState) => ({
+      prev: prevState.prev + 10,
+      next: prevState.next + 10,
+    }));
   };
 
   return (
@@ -47,38 +65,15 @@ const Home = ({ data }) => {
         <meta name="author" content="Constantine Yarushkin"></meta>
         <link rel="canonical" href="https://c-v-ya.github.io/blog" />
       </Helmet>
-      <Col
-        xs={{ span: 24 }}
-        lg={{ span: 10, offset: 4 }}
-        style={{ padding: "1rem" }}
+      <InfiniteScroll
+        dataLength={current.length}
+        next={getMorePosts}
+        hasMore={hasMore}
+        loader={<div className="text-xl text-center">Loading...</div>}
       >
-        <h1>Constantine's Blog</h1>
-
-        <List
-          itemLayout="vertical"
-          size="large"
-          pagination={{
-            pageSize: 7,
-          }}
-          dataSource={listData}
-          renderItem={(item) => (
-            <List.Item
-              key={`${item.date}__${item.title}`}
-              onClick={scrollToTop()}
-            >
-              <List.Item.Meta
-                title={<Link to={item.path}>{item.title}</Link>}
-                description={item.description}
-              />
-              <p>
-                {item.date}
-                <Divider type="vertical" />
-                {item.timeToRead} minute read
-              </p>
-            </List.Item>
-          )}
-        />
-      </Col>
+        {current &&
+          current.map((post, index) => <PostCard key={index} post={post} />)}
+      </InfiniteScroll>
     </Layout>
   );
 };
@@ -93,7 +88,11 @@ export const AllBlogsQuery = graphql`
   query AllBlogPosts {
     allMarkdownRemark(
       sort: { fields: frontmatter___date, order: DESC }
-      filter: { frontmatter: { title: { ne: "Resume" } } }
+      filter: {
+        frontmatter: {
+          path: { nin: ["/resume-md", "/resume-ru-md", "/tools-md"] }
+        }
+      }
     ) {
       edges {
         node {

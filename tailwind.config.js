@@ -1,11 +1,14 @@
 module.exports = {
-    purge: ['./src/**/*.{js,jsx,ts,tsx}'],
-    darkMode: false,
-    theme: {
-        extend: {},
+  purge: ["./src/**/*.{js,jsx,ts,tsx}"],
+  darkMode: false,
+  theme: {
+    fontFamily: {
+      sans: "Noto Sans, Roboto, ui-sans-serif, system-ui, -apple-system",
     },
-    variants: {
-        extend: {},
-    },
-    plugins: [],
-}
+    extend: {},
+  },
+  variants: {
+    extend: {},
+  },
+  plugins: [],
+};

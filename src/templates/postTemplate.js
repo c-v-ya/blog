@@ -2,8 +2,6 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import { graphql, Link } from "gatsby";
 import Img from "gatsby-image";
-import { Col, Divider } from "antd";
-import { RightOutlined, LeftOutlined } from "@ant-design/icons";
 
 import Layout from "../components/Layout";
 
@@ -16,61 +14,58 @@ const Template = ({ data, pageContext }) => {
   return (
     <Layout>
       <Helmet>
-        <title>{title}</title>
+        <title>{title} by Constantine</title>
         <meta
           charSet="utf-8"
           name="description"
           property="og:description"
-          content={`Post "${description}" on Constantine's blog`}
+          content={`"${description}" by Constantine`}
         />
         <meta name="keywords" content={tags}></meta>
         <meta name="author" content="Constantine Yarushkin"></meta>
         <link rel="canonical" href={`https://c-v-ya.github.io/blog${path}`} />
       </Helmet>
-      <Col
-        xs={{ span: 24 }}
-        lg={{ span: 12, offset: 4 }}
-        style={{ padding: "1rem" }}
-      >
-        <h1>{title}</h1>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "flex-end",
-            paddingBottom: "0.5rem",
-          }}
-        >
-          <em>{date}</em>
-          <Divider type="vertical" />
-          <span>{post.timeToRead} min read</span>
+      <div className="flex flex-wrap mx-auto max-w-5xl px-4 md:px-8 py-2 md:py-4 bg-white rounded-lg shadow-md">
+        <div className="text-4xl lg:text-6xl">{title}</div>
+        <div className="w-full text-right pb-2">
+          <em className="p-2">{date}</em>
+          <span className="p-2">{post.timeToRead} min read</span>
         </div>
         {image && (
-          <div style={{ paddingBottom: "0.5rem" }}>
+          <div className="w-full pb-4">
             <Img fluid={image} />
           </div>
         )}
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <Divider />
-        <ul
-          className="ant-pagination"
-          style={{ display: "flex", justifyContent: "center" }}
-        >
+        <div
+          className="block w-full"
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        />
+        <hr />
+        <ul className="flex pagination">
           {next && (
-            <li className="ant-pagination-item ant-pagination-prev">
-              <Link to={next.frontmatter.path}>
-                <LeftOutlined /> Previous post
+            <li
+              className="bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1"
+              type="button"
+              style={{ transition: "all .15s ease" }}
+            >
+              <Link to={next.frontmatter.path} className="text-white">
+                <i className="fas fa-chevron-left"></i> Previous post
               </Link>
             </li>
           )}
           {prev && (
-            <li className="ant-pagination-item ant-pagination-next">
-              <Link to={prev.frontmatter.path}>
-                Next post <RightOutlined />
+            <li
+              className="bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1"
+              type="button"
+              style={{ transition: "all .15s ease" }}
+            >
+              <Link to={prev.frontmatter.path} className="text-white">
+                Next post <i className="fas fa-chevron-right"></i>
               </Link>
             </li>
           )}
         </ul>
-      </Col>
+      </div>
     </Layout>
   );
 };

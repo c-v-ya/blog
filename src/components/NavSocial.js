@@ -4,11 +4,11 @@ import { Link } from "gatsby";
 const NavSocial = ({ url, icon, name, ...rest }) => (
   <span>
     {url ? (
-      <Link to={url} target="blank">
+      <Link to={rest.href} target="blank">
         {icon} {name}
       </Link>
     ) : (
-      <a href={rest.href} target="blank">
+      <a href={url} target="blank">
         {icon} {name}
       </a>
     )}

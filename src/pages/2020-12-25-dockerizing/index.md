@@ -3,7 +3,7 @@ path: "/2020-12-25-dockerizing"
 date: "2020-12-25"
 title: "Dockerizing stuff you need"
 author: "Constantine Yarushkin"
-description: ""
+description: "Fast set up for local development"
 image: "dominik-luckmann-SInhLTQouEk-unsplash.jpg"
 tags: "docker"
 ---

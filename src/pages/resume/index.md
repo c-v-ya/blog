@@ -6,27 +6,29 @@ tags: "python, django, react, aws, sql, web development, blog, resume, cv, exper
 
 # Constantine Yarushkin &mdash; Python developer
 
-:e-mail: [ceeveeya@gmail.com](mailto:ceeveeya@gmail.com)
+:envelope: [ceeveeya@gmail.com](mailto:ceeveeya@gmail.com)
 
 ## Work experience
 
 ### Code Reviewer, [Practicum by Yandex](https://praktikum.yandex.ru)
 
-March, 2020 &ndash; Present.
+March, 2020 &mdash; Present.
 
 - Reviewed Python course students' code assignments, gave feedback, guided them to better decisions and best practices.
 
 ### Python developer, [SimbirSoft](https://www.simbirsoft.com)
 
-November, 2019 &ndash; Present.
+November, 2019 &mdash; Present.
 
 - Developed back-end with containerization via Docker(Compose) according to clients ToR;
 - Had a hands on experience deploying an application with Amazon Web Services via console and Terraform (including Lambda, S3, SNS, SQS, Kinesis, EC2);
-- Worked in distributed teams by Agile with tech stack from Flask and Django to ElasticSearch and Apache Kafka.
+- Built ETL pipelines using pipes and filters pattern;
+- Developed bots for Telegram and MyTeam messengers;
+- Worked in distributed teams by Agile with tech stack from Flask, Django and FastAPI to ElasticSearch and Apache Kafka.
 
 ### Python developer, [AkBars Digital](https://akbars.digital)
 
-January, 2019 &ndash; November, 2019.
+January, 2019 &mdash; November, 2019.
 
 - Developed orchestration server for robotic process automation on Django with Gunicorn + Nginx in Docker;
 - Developed program robots using pyautogui, lackey, win32api and various data processing libraries;
@@ -34,7 +36,7 @@ January, 2019 &ndash; November, 2019.
 
 ### Web developer, [Innova Group](http://innovacompanies.com)
 
-March, 2018 &ndash; January 2019.
+March, 2018 &mdash; January 2019.
 
 - Developed Django project with DRF and Vue.js;
 - Optimized SQL queries via ORM (solving n+1 query problems, etc);
@@ -43,7 +45,7 @@ March, 2018 &ndash; January 2019.
 
 ### Web developer, [OrdoTrans](http://or.do)
 
-November, 2016 &ndash; March, 2018.
+November, 2016 &mdash; March, 2018.
 
 - Worked on the main site’s (or.do) frontend and backend;
 - Developed applications for company’s internal needs in Python (parsing sites, data representation);
@@ -52,7 +54,7 @@ November, 2016 &ndash; March, 2018.
 
 ### Python Developer, [Meanotek](http://meanotek.io)
 
-July &ndash; November, 2016.
+July &mdash; November, 2016.
 
 - Worked on parsing and formatting different datasets;
 - Integrated multiple components via API;
@@ -80,13 +82,13 @@ Lastly, I have a strong boundaries between work and personal life and I'm not re
 
 ### "AI & BigData in medicine, education and neurocommunications" hackathon by [Skoltech](https://www.skoltech.ru/en) and [Philips](https://www.philips.com/global)
 
-5.04.2019 &ndash; 7.04.2019
+5.04.2019 &mdash; 7.04.2019
 
 Victory while solving a problem of classifying types of epilepsy attacks.
 
 ### Third "IT-hackathon on the financial services development" by [AkBars Digital](https://akbars.digital)
 
-29.03.2019 &ndash; 30.03.2019
+29.03.2019 &mdash; 30.03.2019
 
 Second place with project "Client passport photo verification" via [facerecognition](https://github.com/ageitgey/face_recognition).
 

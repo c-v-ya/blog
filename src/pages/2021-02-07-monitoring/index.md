@@ -3,7 +3,7 @@ path: "/2021-02-07-monitoring"
 date: "2021-02-07"
 title: "Monitoring Apps with Docker Containers"
 author: "Constantine Yarushkin"
-description: ""
+description: "Connecting containers together"
 image: "ibrahim-boran-iYkqHp5cGQ4-unsplash.jpg"
 tags: "docker"
 ---

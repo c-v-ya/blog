@@ -25,7 +25,7 @@ const Resume = ({ data }) => {
       <div className="flex flex-wrap mx-auto max-w-5xl px-4 md:px-8 py-2 md:py-4 bg-white rounded-lg shadow-md">
         <div className="flex flex-1 text-2xl lg:text-4xl mb-4">{title}</div>
         <div className="flex flex-1 justify-end">
-          <Link to="/resume-ru">[RU]</Link>
+          <Link to="/resume">[EN]</Link>
         </div>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </div>
@@ -36,8 +36,8 @@ const Resume = ({ data }) => {
 export default Resume;
 
 export const postQuery = graphql`
-  query Resume {
-    markdownRemark(frontmatter: { path: { eq: "/resume-md" } }) {
+  query ResumeRu {
+    markdownRemark(frontmatter: { path: { eq: "/resume-ru-md" } }) {
       frontmatter {
         title
         path
