@@ -21,6 +21,7 @@ tags: "python, django, react, aws, sql, web development, blog, resume, cv, exper
 
 ## Python
 
+- [PySlackers](https://pyslackers.com/web) &mdash; _Python Slack community_
 - [Patterns](https://python-patterns.guide)
 - [Anti Patterns](https://docs.quantifiedcode.com/python-anti-patterns)
 - [Design Patterns](http://www.mcdonaldland.info/files/designpatterns/designpatternscard.pdf)
@@ -45,10 +46,11 @@ tags: "python, django, react, aws, sql, web development, blog, resume, cv, exper
 - [Crontab Guru](https://crontab.guru)
 - [ExcaliDraw](https://excalidraw.com) &mdash; _Diagrams_
 - [carbon](https://carbon.now.sh) &mdash; _Images from code_
+- [flameshot](https://github.com/flameshot-org/flameshot) &mdash; _ScreenShot with edits_
 - [MailTrap](https://mailtrap.io) &mdash; _Email testing_
 - [Let's Encrypt](https://letsencrypt.org) &mdash; _TLS sertificates_
 - [Python algorithms](https://github.com/TheAlgorithms/Python)
-- [Ventoy](https://github.com/ventoy/Ventoy) Multi bootable USB
+- [Ventoy](https://github.com/ventoy/Ventoy) &mdash; _Multi bootable USB_
 - [GitHub emojis](https://gist.github.com/rxaviers/7360908)
 - [GitHub badges](https://github.com/badges/shields)
 - [Keybr](https://www.keybr.com) &mdash; _Touch typing practice_
@@ -91,6 +93,11 @@ tags: "python, django, react, aws, sql, web development, blog, resume, cv, exper
 ## Git set email for project
 
     git config user.email "%email%"
+
+## Git remove from tracking but keep in directory
+
+	git rm --cached %file_name%
+	git rm --cached -r %dir_name%
 
 ## Fetch and rank live mirrorlist for Arch
 
