@@ -73,11 +73,42 @@
         </deckgo-highlight-code>
       
 <h2>Load dump into Postgres docker</h2>
+<p>For <code class="language-text">.sql</code> dumps:</p>
 
         <deckgo-highlight-code   theme="monokai" >
           <code slot="code">docker exec -i CONTAINER_NAME psql -U USER_NAME -d DB_NAME &lt; DUMP_NAME.sql</code>
         </deckgo-highlight-code>
       
+<p>For gzipped dumps:</p>
+
+        <deckgo-highlight-code   theme="monokai" >
+          <code slot="code">gzip -dc DUMP_NAME.gz | docker exec -i CONTAINER_NAME psql -U USER_NAME -d DB_NAME</code>
+        </deckgo-highlight-code>
+      
+<h2>Kafka in Docker</h2>
+<h3>Create topic:</h3>
+
+        <deckgo-highlight-code   theme="monokai" >
+          <code slot="code">kafka-topics.sh --create --topic topic \
+--partitions 4 --zookeeper $ZK --replication-factor 1
+kafka-topics.sh --describe --topic topic --zookeeper $ZK</code>
+        </deckgo-highlight-code>
+      
+<p>where <code class="language-text">ZK = 172.17.0.1:2181</code></p>
+<h3>Start producing:</h3>
+
+        <deckgo-highlight-code   theme="monokai" >
+          <code slot="code">kafka-console-producer.sh --topic=topic \
+--broker-list=`broker-list.sh`</code>
+        </deckgo-highlight-code>
+      
+<h3>Consume:</h3>
+
+        <deckgo-highlight-code   theme="monokai" >
+          <code slot="code">kafka-console-consumer.sh --topic=topic --bootstrap-server=$HOST</code>
+        </deckgo-highlight-code>
+      
+<p>where <code class="language-text">HOST = 172.17.0.1:9092</code></p>
 <h2>Django load all fixtures</h2>
 
         <deckgo-highlight-code   theme="monokai" >
