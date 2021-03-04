@@ -72,7 +72,34 @@ tags: "python, django, react, aws, sql, web development, blog, resume, cv, exper
 
 ## Load dump into Postgres docker
 
+For `.sql` dumps:
+
     docker exec -i CONTAINER_NAME psql -U USER_NAME -d DB_NAME < DUMP_NAME.sql
+
+For gzipped dumps:
+
+    gzip -dc DUMP_NAME.gz | docker exec -i CONTAINER_NAME psql -U USER_NAME -d DB_NAME
+
+## Kafka in Docker
+
+### Create topic:
+
+    kafka-topics.sh --create --topic topic \
+    --partitions 4 --zookeeper $ZK --replication-factor 1
+    kafka-topics.sh --describe --topic topic --zookeeper $ZK
+
+where `ZK = 172.17.0.1:2181`
+
+### Start producing:
+
+    kafka-console-producer.sh --topic=topic \
+    --broker-list=`broker-list.sh`
+
+### Consume:
+
+    kafka-console-consumer.sh --topic=topic --bootstrap-server=$HOST
+
+where `HOST = 172.17.0.1:9092`
 
 ## Django load all fixtures
 
@@ -96,8 +123,8 @@ tags: "python, django, react, aws, sql, web development, blog, resume, cv, exper
 
 ## Git remove from tracking but keep in directory
 
-	git rm --cached %file_name%
-	git rm --cached -r %dir_name%
+    git rm --cached %file_name%
+    git rm --cached -r %dir_name%
 
 ## Fetch and rank live mirrorlist for Arch
 
