@@ -61,7 +61,7 @@ There is already a [guide](https://wurstmeister.github.io/kafka-docker) on how t
 
 ## Create topic
 
-But let's start with producing. Go to ">\_ Console" of the Kafka container. Or execute command below in your terminal session
+But let's start with creating a topic. Go to ">\_ Console" of the Kafka container. Or execute command below in your terminal session
 
     docker exec -it kafka /bin/bash
 

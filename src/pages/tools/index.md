@@ -12,6 +12,7 @@ tags: "python, django, react, aws, sql, web development, blog, resume, cv, exper
 
 ## Libraries:
 
+- [Black](https://black.readthedocs.io/en/stable) &mdash; _Opinionated Python formatter_
 - [Loguru](https://github.com/Delgan/loguru) &mdash; _Logging made easy_
 - [Celery](https://github.com/celery/celery) &mdash; _Task queue_
 - [Flower](https://github.com/mher/flower) &mdash; _Monitoring for Celery_
