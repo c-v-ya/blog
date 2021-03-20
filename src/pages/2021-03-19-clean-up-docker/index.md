@@ -37,6 +37,8 @@ But I don't want to run this command with Crontab. Or, even worse, run it manual
 
 Meaning I'll have only one file under 100Mb. Which I think should be suffice for the logs.
 
+But, this will not affect already created containers! You'll need to recreate every single one in order for them to respect the new logging config.
+
 ---
 
 Hope this will save you some time and nerves if/when you'll encounter a similar issue. So you can just focus on writing quality code :blush:
