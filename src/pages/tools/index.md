@@ -7,6 +7,7 @@ tags: "python, django, react, aws, sql, web development, blog, resume, cv, exper
 ## Web frameworks:
 
 - [Django](https://github.com/django/django)
+- [Django REST Framework](https://github.com/encode/django-rest-framework)
 - [FastAPI](https://github.com/tiangolo/fastapi)
 - [Flask](https://github.com/pallets/flask)
 
@@ -118,7 +119,7 @@ where `HOST = 172.17.0.1:9092`
 
     git commit -am "message" --date "$(date -d -10minutes)"
 
-## Git set email for project
+## Git set email for a project
 
     git config user.email "%email%"
 

@@ -6,63 +6,71 @@ tags: "python, django, react, aws, sql, web development, blog, resume, cv, exper
 
 # Constantine Yarushkin &mdash; Python developer
 
-:envelope: [ceeveeya@gmail.com](mailto:ceeveeya@gmail.com)
+<i class="far fa-envelope"></i> [ceeveeya@gmail.com](mailto:ceeveeya@gmail.com)
 
 ## Work experience
+
+### Python developer, [Samolet Development](https://samolet.ru/)
+
+March, 2021 &mdash; Present.
+
+Make employees of regulatory agencies, contractors and customers life easier by creating convenient, fast and reliable systems.
+
+Tech stack: DRF, Kafka, asyncio, celery, UnitTest, PostreSQL, Docker, git.
+
+---
 
 ### Code Reviewer, [Practicum by Yandex](https://praktikum.yandex.ru)
 
 March, 2020 &mdash; Present.
 
-- Reviewed Python course students' code assignments, gave feedback, guided them to better decisions and best practices.
+Code reviews of Python course students' assignments, introducing best practices, giving feedback.
+
+---
 
 ### Python developer, [SimbirSoft](https://www.simbirsoft.com)
 
-November, 2019 &mdash; Present.
+November, 2019 &mdash; March, 2021.
 
-- Developed back-end with containerization via Docker(Compose) according to clients ToR;
-- Had a hands on experience deploying an application with Amazon Web Services via console and Terraform (including Lambda, S3, SNS, SQS, Kinesis, EC2);
-- Built ETL pipelines using pipes and filters pattern;
-- Developed bots for Telegram and MyTeam messengers;
-- Worked in distributed teams by Agile with tech stack from Flask, Django and FastAPI to ElasticSearch and Apache Kafka.
+Backend development with containerization in Docker(Compose) according to the customer's requirements. Building ETL pipelines and filters. Deploying applications with Amazon Web Services via console and Terraform (including Lambda, S3, SNS, SQS, Kinesis, EC2). Developing bots for Telegram and MyTeam messengers. Working in distributed Agile teams with a tech stack from Flask, Django and FastAPI to ElasticSearch and Apache Kafka.
+
+---
 
 ### Python developer, [AkBars Digital](https://akbars.digital)
 
 January, 2019 &mdash; November, 2019.
 
-- Developed orchestration server for robotic process automation on Django with Gunicorn + Nginx in Docker;
-- Developed program robots using pyautogui, lackey, win32api and various data processing libraries;
-- Worked in a team with Scrum flow.
+Orchestrating the robotic process automation of banking processes. Reducing the time costs of business via development of software robots. Working in a self-organizing team with Scrum flow.
+
+Tech stack: Django with Gunicorn and Nginx in Docker. pyautogui, lackey, win32api and data conversion libraries.
+
+---
 
 ### Web developer, [Innova Group](http://innovacompanies.com)
 
 March, 2018 &mdash; January 2019.
 
-- Developed Django project with DRF and Vue.js;
-- Optimized SQL queries via ORM (solving n+1 query problems, etc);
-- Worked with task queries via RabbitMQ and Celery;
-- Developed smart contracts based on Ethereum and Qtum blockchains.
+Development with Django, DRF and Vue.js. SQL query optimization via ORM (solving n+1 query problems, etc.). Working with task queues via Celery + RabbitMQ. Development of smart contracts based on Ethereum and Qtum blockchains.
+
+---
 
 ### Web developer, [OrdoTrans](http://or.do)
 
 November, 2016 &mdash; March, 2018.
 
-- Worked on the main site’s (or.do) frontend and backend;
-- Developed applications for company’s internal needs in Python (parsing sites, data representation);
-- Deployed applications on machines with both Linux and Windows Server;
-- Java, Spring Boot, MS SQL, Python 3, Materialize CSS.
+Back- and front-end development of the freight company's portal. Reducing business costs for processing bids sites by parsing and integrating with web and 1C services. Manual Deployment of applications on Windows server and Linux.
+
+Tech stack: Java, Spring Boot, MS SQL, Python 3, Materialize CSS.
+
+---
 
 ### Python Developer, [Meanotek](http://meanotek.io)
 
 July &mdash; November, 2016.
 
-- Worked on parsing and formatting different datasets;
-- Integrated multiple components via API;
-- Used relational and graph databases;
-- Developed small web applications including backend;
-- Deployed applications on Linux machines;
-- Managed projects in a small team of 3 developers;
-- Python 2(3) including third-party libraries, Tornado, MySQL, Neo4j, HTML/CSS, Bootstrap, Git, Linux.
+Work on parsing and converting files of different formats. Integration of multiple components using APIs. Working with relational and graph databases. Developing small web applications including backend. Projects deployment on customer's hardware. Managing a small team of 3 developers.
+
+Tech stack: Python 2(3) including 3rd party libraries, Tornado, MySQL, Neo4j, HTML/CSS, Bootstrap, git, Linux.
 
 ## About me
 
@@ -76,7 +84,7 @@ I think it's great to have a team-lead or quarterly/semiannual tech-reviews wher
 
 I seek to work remotely because I'm well organized and already have experience in working with distributed teams. I'm aiming for the result not for sitting sacred hours that's why I can agree at tracking time on tasks at most. But no crazy screenshot/webcam/activity trackers, sorry. Also I'm against heavy bureaucracy, because it just kills all aspiration.
 
-Lastly, I have a strong boundaries between work and personal life and I'm not ready to give all my time to the former, even if it compensates me three times as high.
+Lastly, I have strong boundaries between work and personal life and I'm not ready to give all my time to the former, even if it compensates me three times as high.
 
 ## Hackathons
 

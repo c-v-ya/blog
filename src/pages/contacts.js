@@ -34,7 +34,7 @@ const Contacts = () => (
         .
       </p>
       <p>
-        Or send me an email{" "}
+        Or send me an email to{" "}
         <NavSocial
           url="mailto:ceeveeya@gmail.com"
           icon={<i className="fa fa-envelope" />}
@@ -50,7 +50,7 @@ const Contacts = () => (
           icon={<i className="fab fa-linkedin-in" />}
           name={"LinkedIn"}
         />{" "}
-        . Just for future opportunities, who knows how life could turn around.
+        . Just for the future opportunities, who knows how life could turn around.
       </p>
       <hr />
       <p>
